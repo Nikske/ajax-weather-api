@@ -1,5 +1,5 @@
 let input = document.getElementById("location");
-let cityName = document.getElementById("cityname");
+
 
 document.getElementById("run").addEventListener("click", function() {
     fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + input.value + "&appid=6658b1d8b2b559dffe057f324f9d8eed").then((response) => {
@@ -7,8 +7,15 @@ document.getElementById("run").addEventListener("click", function() {
     })
         .then((data) => {
             console.log(data);
-            let dataName = data['city']['name'];
+            // City name
+            document.getElementById("cityname").innerHTML= data['city']['name'];
+            
+            let tempList = [];
+            for (let i = 0; i<40; i++) {
+                tempList.push(data['list'][i]['main']['temp']);
+            }
 
-            cityName.innerHTML = dataName;
+            console.log(tempList);
+
         })
 });

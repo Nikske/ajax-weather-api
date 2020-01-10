@@ -13,12 +13,17 @@ document.getElementById("run").addEventListener("click", function() {
             console.log(data);
             // City name
             document.getElementById("cityname").innerHTML= data['city']['name'];
-            // List of all 40 temperatures
+            // List of all 40 temperatures, descriptions and icons
             let tempList = [];
+            let descriptionList = [];
+            let iconList = [];
             for (let i = 0; i<40; i++) {
                 tempList.push(data['list'][i]['main']['temp']);
+                descriptionList.push(data['list'][i]['weather'][0]['description']);
+                iconList.push(data['list'][i]['weather'][0]['icon']);
             }
-            // Cutting array up in the 5 days
+
+            // Cutting all temperatures up in the 5 days
             let dayOne = tempList.slice(0,8);
             let dayTwo = tempList.slice(8,16);
             let dayThree = tempList.slice(16,24);
@@ -31,7 +36,13 @@ document.getElementById("run").addEventListener("click", function() {
             let tempDayFour = calculateAverage(dayFour);
             let tempDayFive = calculateAverage(dayFive);
 
-            console.log(tempDayOne);
+            // Inserting temperatures
+            document.getElementById("temp1").innerHTML= tempDayOne + " " + "&#8451";
+            document.getElementById("temp2").innerHTML= tempDayTwo + " " + "&#8451";
+            document.getElementById("temp3").innerHTML= tempDayThree + " " + "&#8451";
+            document.getElementById("temp4").innerHTML= tempDayFour + " " + "&#8451";
+            document.getElementById("temp5").innerHTML= tempDayFive + " " + "&#8451";
+
 
         })
 });

@@ -23,6 +23,7 @@ document.getElementById("run").addEventListener("click", function() {
                 iconList.push(data['list'][i]['weather'][0]['icon']);
             }
 
+            // TEMPERATURES
             // Cutting all temperatures up in the 5 days
             let dayOne = tempList.slice(0,8);
             let dayTwo = tempList.slice(8,16);
@@ -42,6 +43,13 @@ document.getElementById("run").addEventListener("click", function() {
             document.getElementById("temp3").innerHTML= tempDayThree + " " + "&#8451";
             document.getElementById("temp4").innerHTML= tempDayFour + " " + "&#8451";
             document.getElementById("temp5").innerHTML= tempDayFive + " " + "&#8451";
+
+            // DESCRIPTIONS
+            // Cutting all descriptions up in the 5 days
+            let descriptionDayOne = descriptionList.slice(0,8);
+            let descriptionDayTwo = descriptionList.slice(8,16);
+            let descriptionDayThree = descriptionList.slice(16,24);
+            
 
 
         })

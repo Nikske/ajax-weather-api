@@ -51,7 +51,6 @@ document.getElementById("run").addEventListener("click", function() {
             let descriptionDayThree = descriptionList.slice(16,24);
             let descriptionDayFour = descriptionList.slice(24,32);
             let descriptionDayFive = descriptionList.slice(32,40);
-            console.log(descriptionDayTwo);
 
             // Inserting descriptions - Day & night
             document.getElementById("descriptionDay1").innerHTML= "Day: " + descriptionDayOne[3];
@@ -64,6 +63,9 @@ document.getElementById("run").addEventListener("click", function() {
             document.getElementById("descriptionNight4").innerHTML= "Night: " + descriptionDayFour[6];
             document.getElementById("descriptionDay5").innerHTML= "Day: " + descriptionDayFive[3];
             document.getElementById("descriptionNight5").innerHTML= "Night: " + descriptionDayFive[6];
+
+            /* ICONS */
+
 
 
         })

@@ -4,56 +4,59 @@
     <meta charset="UTF-8">
     <title>Weather</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
     <link href="assets/css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <div id="page-wrapper">
         <section>
-            <div class="row">
-                <article>
-                        <label for="location">City</label>
+            <div class="row d-flex justify-content-center">
+                <article id="input">
+                        <!--<label for="location">City</label>-->
                         <input type="text" id="location">
                         <button type="button" id="run">Go</button>
-                    <h1 id="cityname"></h1>
+                    <h1 id="cityname" class="mt-2 ml-2"></h1>
                 </article>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- 1 -->
-                <article id="day1" class="col">
-                    <h3>Day 1</h3>
-                    <p id="descriptionDay1"></p>
-                    <p id="descriptionNight1"></p>
-                    <p id="temp1"></p>
+                <article id="day1" class="day bg-success rounded p-3">
+                    <div class="">
+                        <h3>Day 1</h3>
+                        <p id="descriptionDay1"></p>
+                        <p id="descriptionNight1"></p>
+                        <p id="temp1" class="temp"></p>
+                    </div>
                 </article>
             </div>
-                <div class="row">
+                <div class="row justify-content-center mt-3">
                 <!-- 2 -->
-                <article id="day2"  class="col">
+                <article id="day2"  class="day bg-info rounded p-3 m-3">
                     <h3>Day 2</h3>
                     <p id="descriptionDay2"></p>
                     <p id="descriptionNight2"></p>
-                    <p id="temp2"></p>
+                    <p id="temp2" class="temp"></p>
                 </article>
                 <!-- 3 -->
-                <article id="day3"  class="col">
+                <article id="day3"  class="day bg-info rounded p-3 m-3">
                     <h3>Day 3</h3>
                     <p id="descriptionDay3"></p>
                     <p id="descriptionNight3"></p>
-                    <p id="temp3"></p>
+                    <p id="temp3" class="temp"></p>
                 </article>
                 <!-- 4 -->
-                <article id="day4"  class="col">
+                <article id="day4"  class="day bg-info rounded p-3 m-3">
                     <h3>Day 4</h3>
                     <p id="descriptionDay4"></p>
                     <p id="descriptionNight4"></p>
-                    <p id="temp4"></p>
+                    <p id="temp4" class="temp"></p>
                 </article>
                 <!-- 5 -->
-                <article id="day5"  class="col">
+                <article id="day5"  class="day bg-info rounded p-3 m-3">
                     <h3>Day 5</h3>
                     <p id="descriptionDay5"></p>
                     <p id="descriptionNight5"></p>
-                    <p id="temp5"></p>
+                    <p id="temp5" class="temp"></p>
                 </article>
             </div>
         </section>

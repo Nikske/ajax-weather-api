@@ -11,8 +11,8 @@ body {
     }
 
     .day {
-      min-height: 300px;
       min-width: 15em;
+      height: 170px;
     }
 
     .temp {
@@ -22,6 +22,7 @@ body {
 
     figure {
       min-height: 7em;
+      float: right;
     }
   }
 }

@@ -11,8 +11,8 @@ body #page-wrapper #input {
   text-align: center;
 }
 body #page-wrapper .day {
-  min-height: 300px;
   min-width: 15em;
+  height: 170px;
 }
 body #page-wrapper .temp {
   font-weight: bold;
@@ -20,6 +20,7 @@ body #page-wrapper .temp {
 }
 body #page-wrapper figure {
   min-height: 7em;
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */

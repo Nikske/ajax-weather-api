@@ -4,7 +4,7 @@ function calculateAverage(temps) {
     return Math.round((temps.reduce ((a,b) => a + b, 0) / temps.length) -273);
 }
 
-
+// Fetching the correct query by inserting the input value.
 document.getElementById("run").addEventListener("click", function() {
     fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + input.value + "&appid=6658b1d8b2b559dffe057f324f9d8eed").then((response) => {
         return response.json();
@@ -30,7 +30,7 @@ document.getElementById("run").addEventListener("click", function() {
             let dayThree = tempList.slice(16,24);
             let dayFour = tempList.slice(24,32);
             let dayFive = tempList.slice(32,40);
-            // Temperature averages.
+            // Temperature averages using the function defined earlier.
             let tempDayOne = calculateAverage(dayOne);
             let tempDayTwo = calculateAverage(dayTwo);
             let tempDayThree = calculateAverage(dayThree);
@@ -52,20 +52,28 @@ document.getElementById("run").addEventListener("click", function() {
             let descriptionDayFour = descriptionList.slice(24,32);
             let descriptionDayFive = descriptionList.slice(32,40);
 
-            // Inserting descriptions - Day & night
-            document.getElementById("descriptionDay1").innerHTML= "Day: " + descriptionDayOne[3];
-            document.getElementById("descriptionNight1").innerHTML= "Night: " + descriptionDayOne[6];
-            document.getElementById("descriptionDay2").innerHTML= "Day: " + descriptionDayTwo[3];
-            document.getElementById("descriptionNight2").innerHTML= "Night: " + descriptionDayTwo[6];
-            document.getElementById("descriptionDay3").innerHTML= "Day: " + descriptionDayThree[3];
-            document.getElementById("descriptionNight3").innerHTML= "Night: " + descriptionDayThree[6];
-            document.getElementById("descriptionDay4").innerHTML= "Day: " + descriptionDayFour[3];
-            document.getElementById("descriptionNight4").innerHTML= "Night: " + descriptionDayFour[6];
-            document.getElementById("descriptionDay5").innerHTML= "Day: " + descriptionDayFive[3];
-            document.getElementById("descriptionNight5").innerHTML= "Night: " + descriptionDayFive[6];
+            // Inserting descriptions
+            document.getElementById("descriptionDay1").innerHTML= descriptionDayOne[3];
+            document.getElementById("descriptionDay2").innerHTML= descriptionDayTwo[3];
+            document.getElementById("descriptionDay3").innerHTML= descriptionDayThree[3];
+            document.getElementById("descriptionDay4").innerHTML= descriptionDayFour[3];
+            document.getElementById("descriptionDay5").innerHTML= descriptionDayFive[3];
+
 
             /* ICONS */
+            // Cutting icons in the 5 days
+            let iconsDayOne = iconList.slice(0,8);
+            let iconsDayTwo = iconList.slice(8,16);
+            let iconsDayThree = iconList.slice(16,24);
+            let iconsDayFour = iconList.slice(24,32);
+            let iconsDayFive = iconList.slice(32,40);
 
+            // Inserting icons
+            document.getElementById("img1").src= "http://openweathermap.org/img/wn/" + iconsDayOne[4] + "@2x.png";
+            document.getElementById("img2").src= "http://openweathermap.org/img/wn/" + iconsDayTwo[4] + "@2x.png";
+            document.getElementById("img3").src= "http://openweathermap.org/img/wn/" + iconsDayThree[4] + "@2x.png";
+            document.getElementById("img4").src= "http://openweathermap.org/img/wn/" + iconsDayFour[4] + "@2x.png";
+            document.getElementById("img5").src= "http://openweathermap.org/img/wn/" + iconsDayFive[4] + "@2x.png";
 
 
         })

@@ -1,4 +1,6 @@
 let input = document.getElementById("location");
+
+
 // Function to calculate averages used later. -273 to convert Kelvin to Celsius
 function calculateAverage(temps) {
     return Math.round((temps.reduce ((a,b) => a + b, 0) / temps.length) -273);
@@ -6,7 +8,7 @@ function calculateAverage(temps) {
 
 // Fetching the correct query by inserting the input value.
 document.getElementById("run").addEventListener("click", function() {
-    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + input.value + "&appid=6658b1d8b2b559dffe057f324f9d8eed").then((response) => {
+    fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + input.value + openWeatherMap).then((response) => {
         return response.json();
     })
         .then((data) => {
@@ -75,6 +77,7 @@ document.getElementById("run").addEventListener("click", function() {
             document.getElementById("img4").src= "http://openweathermap.org/img/wn/" + iconsDayFour[4] + "@2x.png";
             document.getElementById("img5").src= "http://openweathermap.org/img/wn/" + iconsDayFive[4] + "@2x.png";
 
+            //fetch("https://api.unsplash.com/search/photos?query=" +input.value+)
 
         })
 });

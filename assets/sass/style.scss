@@ -1,21 +1,27 @@
-#page-wrapper {
-  width: 80%;
-  margin: auto;
-  font-family: 'Oxygen', sans-serif;
+body {
+  background-size: cover;
+  #page-wrapper {
+    width: 80%;
+    margin: auto;
+    font-family: 'Oxygen', sans-serif;
 
-  #input {
-    min-height: 170px;
-    text-align: center;
-  }
-  .day {
-    min-height: 300px;
-    min-width: 15em;
-  }
-  .temp {
-    font-weight: bold;
-    font-size: 140%;
-  }
-  figure {
-    min-height: 7em;
+    #input {
+      min-height: 170px;
+      text-align: center;
+    }
+
+    .day {
+      min-height: 300px;
+      min-width: 15em;
+    }
+
+    .temp {
+      font-weight: bold;
+      font-size: 140%;
+    }
+
+    figure {
+      min-height: 7em;
+    }
   }
 }

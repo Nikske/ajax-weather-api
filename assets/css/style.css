@@ -1,21 +1,24 @@
-#page-wrapper {
+body {
+  background-size: cover;
+}
+body #page-wrapper {
   width: 80%;
   margin: auto;
   font-family: "Oxygen", sans-serif;
 }
-#page-wrapper #input {
+body #page-wrapper #input {
   min-height: 170px;
   text-align: center;
 }
-#page-wrapper .day {
+body #page-wrapper .day {
   min-height: 300px;
   min-width: 15em;
 }
-#page-wrapper .temp {
+body #page-wrapper .temp {
   font-weight: bold;
   font-size: 140%;
 }
-#page-wrapper figure {
+body #page-wrapper figure {
   min-height: 7em;
 }
 

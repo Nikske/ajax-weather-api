@@ -6,7 +6,7 @@ function calculateAverage(temps) {
     return Math.round((temps.reduce ((a,b) => a + b, 0) / temps.length) -273);
 }
 
-// Fetching the correct query by inserting the input value.
+// Fetching the correct query by inserting the input value. Using a separate file to store my API keys
 document.getElementById("run").addEventListener("click", function() {
     fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + input.value + openWeatherMap).then((response) => {
         return response.json();
@@ -77,7 +77,15 @@ document.getElementById("run").addEventListener("click", function() {
             document.getElementById("img4").src= "http://openweathermap.org/img/wn/" + iconsDayFour[4] + "@2x.png";
             document.getElementById("img5").src= "http://openweathermap.org/img/wn/" + iconsDayFive[4] + "@2x.png";
 
-            //fetch("https://api.unsplash.com/search/photos?query=" +input.value+)
 
+        });
+        // Unsplash images
+        fetch("https://api.unsplash.com/search/photos?query=" +input.value+ unsplash).then((response2) => {
+                return response2.json();
         })
+            .then((data2) => {
+                console.log(data2);
+                let backgroundImage = data2['results'][1]['urls']['regular'];
+                    document.body.style.backgroundImage = 'url('+backgroundImage+')';
+            })
 });

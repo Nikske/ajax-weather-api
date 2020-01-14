@@ -15,7 +15,27 @@ document.getElementById("run").addEventListener("click", function() {
             console.log(data);
             // City name
             document.getElementById("cityname").innerHTML= data['city']['name'];
-            // List of all 40 temperatures, descriptions and icons
+            let days = [];
+            let dayOne = [];
+            let daytwo = [];
+            let dayThree = [];
+            let dayFour = [];
+            let dayFive = [];
+            let daysArray = [];
+            // Apparently I needed to push it into a variable for it to not check for unique values
+            for (let i=0; i<40; i++) {
+                let dates = new Date(data['list'][i]['dt'] *1000).getDay();
+                daysArray.push(dates);
+            }
+
+            console.log(daysArray);
+
+
+
+
+
+            /* Old things that aren't correct */
+            /* // List of all 40 temperatures, descriptions and icons.
             let tempList = [];
             let descriptionList = [];
             let iconList = [];
@@ -25,7 +45,7 @@ document.getElementById("run").addEventListener("click", function() {
                 iconList.push(data['list'][i]['weather'][0]['icon']);
             }
 
-            /* TEMPERATURES */
+            /* TEMPERATURES */ /*
             // Cutting all temperatures up in the 5 days
             let dayOne = tempList.slice(0,8);
             let dayTwo = tempList.slice(8,16);
@@ -46,15 +66,15 @@ document.getElementById("run").addEventListener("click", function() {
             document.getElementById("temp4").innerHTML= tempDayFour + " " + "&#8451";
             document.getElementById("temp5").innerHTML= tempDayFive + " " + "&#8451";
 
-            /* DESCRIPTIONS */
+            /* DESCRIPTIONS */ /*
             // Cutting all descriptions up in the 5 days
             let descriptionDayOne = descriptionList.slice(0,8);
             let descriptionDayTwo = descriptionList.slice(8,16);
             let descriptionDayThree = descriptionList.slice(16,24);
             let descriptionDayFour = descriptionList.slice(24,32);
-            let descriptionDayFive = descriptionList.slice(32,40);
+            let descriptionDayFive = descriptionList.slice(32,40); */
 
-            // Inserting descriptions
+            /* // Inserting descriptions
             document.getElementById("descriptionDay1").innerHTML= descriptionDayOne[3];
             document.getElementById("descriptionDay2").innerHTML= descriptionDayTwo[3];
             document.getElementById("descriptionDay3").innerHTML= descriptionDayThree[3];
@@ -62,21 +82,21 @@ document.getElementById("run").addEventListener("click", function() {
             document.getElementById("descriptionDay5").innerHTML= descriptionDayFive[3];
 
 
-            /* ICONS */
+            /* ICONS */ /*
             // Cutting icons in the 5 days
             let iconsDayOne = iconList.slice(0,8);
             let iconsDayTwo = iconList.slice(8,16);
             let iconsDayThree = iconList.slice(16,24);
             let iconsDayFour = iconList.slice(24,32);
-            let iconsDayFive = iconList.slice(32,40);
+            let iconsDayFive = iconList.slice(32,40); */
 
-            // Inserting icons
+           /* // Inserting icons
             document.getElementById("img1").src= "http://openweathermap.org/img/wn/" + iconsDayOne[4] + "@2x.png";
             document.getElementById("img2").src= "http://openweathermap.org/img/wn/" + iconsDayTwo[4] + "@2x.png";
             document.getElementById("img3").src= "http://openweathermap.org/img/wn/" + iconsDayThree[4] + "@2x.png";
             document.getElementById("img4").src= "http://openweathermap.org/img/wn/" + iconsDayFour[4] + "@2x.png";
             document.getElementById("img5").src= "http://openweathermap.org/img/wn/" + iconsDayFive[4] + "@2x.png";
-
+            */
 
         });
         // Unsplash images
@@ -84,7 +104,7 @@ document.getElementById("run").addEventListener("click", function() {
                 return response2.json();
         })
             .then((data2) => {
-                console.log(data2);
+                //console.log(data2);
                 let backgroundImage = data2['results'][1]['urls']['regular'];
                     document.body.style.backgroundImage = 'url('+backgroundImage+')';
             })

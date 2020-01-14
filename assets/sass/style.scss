@@ -11,18 +11,12 @@ body {
     }
 
     .day {
-      min-width: 15em;
-      height: 170px;
+      min-width: 25em;
     }
 
     .temp {
       font-weight: bold;
       font-size: 140%;
-    }
-
-    figure {
-      min-height: 7em;
-      float: right;
     }
   }
 }

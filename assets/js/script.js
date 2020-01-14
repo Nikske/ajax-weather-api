@@ -15,20 +15,48 @@ document.getElementById("run").addEventListener("click", function() {
             console.log(data);
             // City name
             document.getElementById("cityname").innerHTML= data['city']['name'];
+            let currentDay = new Date().getDay();
             let days = [];
             let dayOne = [];
-            let daytwo = [];
+            let dayTwo = [];
             let dayThree = [];
             let dayFour = [];
             let dayFive = [];
-            let daysArray = [];
             // Apparently I needed to push it into a variable for it to not check for unique values
             for (let i=0; i<40; i++) {
                 let dates = new Date(data['list'][i]['dt'] *1000).getDay();
-                daysArray.push(dates);
+                if (currentDay === dates) {
+                    dayOne.push(data['list'][i]);
+                    if (currentDay === 6) {
+                        currentDay = 0;
+                    }
+                }
+                if (currentDay + 1 === dates) {
+                    dayTwo.push(data['list'][i]);
+                    if (currentDay === 6) {
+                        currentDay = 0;
+                    }
+                }
+                if (currentDay + 2 === dates) {
+                    dayThree.push(data['list'][i]);
+                    if (currentDay === 6) {
+                        currentDay = 0;
+                    }
+                }
+                if (currentDay + 3 === dates) {
+                    dayFour.push(data['list'][i]);
+                    if (currentDay === 6) {
+                        currentDay = 0;
+                    }
+                }
+                if (currentDay + 4 === dates) {
+                    dayFive.push(data['list'][i]);
+                    if (currentDay === 6) {
+                        currentDay = 0;
+                    }
+                }
             }
-
-            console.log(daysArray);
+            
 
 
 

@@ -16,13 +16,11 @@ document.getElementById("run").addEventListener("click", function() {
             // City name
             document.getElementById("cityname").innerHTML= data['city']['name'];
             let currentDay = new Date().getDay();
-            let days = [];
             let dayOne = [];
             let dayTwo = [];
             let dayThree = [];
             let dayFour = [];
             let dayFive = [];
-            // Apparently I needed to push it into a variable for it to not check for unique values
             for (let i=0; i<40; i++) {
                 let dates = new Date(data['list'][i]['dt'] *1000).getDay();
                 if (currentDay === dates) {
@@ -56,11 +54,16 @@ document.getElementById("run").addEventListener("click", function() {
                     }
                 }
             }
-            
+            console.log(dayOne);
+            let tempsDayOne = [];
+            for (let j = 0; j < dayOne.length; j++) {
+                tempsDayOne.push(dayOne[j]['main']['temp']);
+            }
+            console.log(tempsDayOne);
+            let dayOneAverage = calculateAverage(tempsDayOne);
+            console.log(dayOneAverage);
 
-
-
-
+            document.getElementById("temp1").innerHTML = dayOneAverage + " " + "&#8451";
 
             /* Old things that aren't correct */
             /* // List of all 40 temperatures, descriptions and icons.
